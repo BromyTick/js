@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слава Україні</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #000428, #004e92);
+            color: #FAFAFA;
+            font-family: Arial, sans-serif;
+        }
+        div {
+            font-size: 40px; 
+            color: #FAFAFA;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+            width: 30%;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .cqe {
+            width: 50px;
+            height: 30px;
+            font-size: 24px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: #FAFAFA;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+        }
+        .btn {
+            font-family: monospace;
+            color: #FAFAFA;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 2px solid #FAFAFA;
+            background: #252525;
+            box-shadow: 3px 3px #fafafa;
+            cursor: pointer;
+            margin: 35px 0; 
+            width: 350px;
+            height: 45px;
+            font-size: 24px;
+        }
+        .btn:active {
+            box-shadow: none;
+            transform: translate(3px, 3px);
+        }
+        @media only screen and (max-width: 800px) {
+            div {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function diapozon() {
+            let number = +document.qef.amount.value;
+            let answer = document.getElementById("enter");
+            let string = "";
+            for (let count = 1; count <= number; count++) {
+                string += (`<ul>${count}. Glory to Ukraine!</ul>`);
+            }
+            answer.innerHTML = string;
+        }
+    </script>
+    <div>
+        <p>Скільки словосполучень хочете продублювати?</p>
+        <form name="qef" action="javascript:diapozon()">
+            <input class="cqe" name="amount" type="text" value="100" size="4">
+            <input class="btn" type="submit" value="Ввести кількість">
+        </form>
+        <span id="enter"></span>
+    </div>
+</body>
+</html>

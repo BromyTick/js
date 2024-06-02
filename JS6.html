@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логін, пароль</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            background: linear-gradient(to right, #000428, #004e92);
+            color: #FAFAFA;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        div {
+            font-size: 40px; 
+            color: #FAFAFA;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+            width: 30%;
+            margin: auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s;
+        }
+        div:hover {
+            transform: scale(1.05);
+        }
+        .cqe {
+            width: 70px;
+            height: 30px;
+            font-size: 24px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: #FAFAFA;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+        }
+        .btn {
+            font-family: 'Orbitron', sans-serif;
+            color: #FAFAFA;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 2px solid #FAFAFA;
+            background: #252525;
+            box-shadow: 3px 3px #fafafa;
+            cursor: pointer;
+            margin: 35px 0; 
+            width: 180px;
+            height: 45px;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #3e3e3e;
+            box-shadow: 3px 3px 10px #fafafa;
+        }
+        .btn:active {
+            box-shadow: none;
+            transform: translate(3px, 3px);
+        }
+        @media only screen and (max-width: 800px) {
+            div {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function logPass() {
+            let login = document.qef.a.value;
+            let password = document.qef.b.value;
+            let answer = document.getElementById('enter');
+            let string = '';
+
+            if (login === 'User' && password === 'password') {
+                string = 'Ласкаво просимо';
+            } else {
+                string = 'Логін або пароль невірний';
+            }
+            answer.innerHTML = string;
+        }
+    </script>
+    <div>
+        <p>Введіть логін і пароль</p>
+        <form name="qef" action="javascript:logPass()">
+            Login <input class="cqe" name="a" type="text" value="User" size="4">
+            Password <input class="cqe" name="b" type="text" value="1234" size="4">
+            <input class="btn" type="submit" value="Ввести">
+        </form>
+        <span id="enter"></span>
+    </div>
+</body>
+</html>

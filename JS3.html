@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банкомат</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #000428, #004e92);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        div {
+            font-size: 40px; 
+            color: rgb(255, 255, 255);
+            text-align: center;
+            background-color: rgb(83, 0, 124);
+            opacity: 0.7;
+            border-radius: 50px;
+            width: 30%;
+            margin: auto;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        .cqe {
+            width: 50px;
+            height: 30px;
+            font-size: 24px;
+            text-align: center;
+        }
+        .btn {
+            font-family: monospace;
+            color: #FAFAFA;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 2px solid #FAFAFA;
+            background: #252525;
+            box-shadow: 3px 3px #fafafa;
+            cursor: pointer;
+            margin: 35px 0; 
+            width: 220px;
+            height: 45px;
+            font-size: 24px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:active {
+            box-shadow: none;
+            transform: translate(3px, 3px);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Введіть суму, яку хочете зняти</p>
+        <form name="qef" action="javascript:atm()">
+            <input class="cqe" name="sol" type="text" value="50" size="4">
+            <input class="btn" type="submit" value="Забрати кошти">
+        </form>
+        <span id="ATM"></span>
+    </div>
+
+    <script>
+        function atm() {
+            let money = +document.qef.sol.value;
+            let answer = document.getElementById("ATM");
+            if (money < 50 || money > 3000) {
+                string = ('На жаль, ви можете зняти гроші від 50 грн до 3000 грн');
+            } else if (money % 50 == 0) { 
+                string = ('Заберіть свої гроші у сумі ' + money + ' грн ');
+            } else {
+                string = (`В банкоматі таких купюр немає, тому заберіть ваші гроші у сумі: ${money - money % 50} грн, а ${money % 50} грн я заберу `);
+            }
+            answer.innerHTML = string;
+        }
+    </script>
+</body>
+</html>

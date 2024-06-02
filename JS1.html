@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Твій рік</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        body {
+            background: linear-gradient(to right, #000428, #004e92);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        .container input {
+            width: calc(100% - 40px);
+            padding: 10px;
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none;
+        }
+        .container button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #ff4081 0%, #81d4fa 100%);
+            color: white;
+            transition: background 0.3s;
+        }
+        .container button:hover {
+            background: linear-gradient(135deg, #ff80ab 0%, #81d4fa 100%);
+        }
+        .container button:active {
+            background: linear-gradient(135deg, #f50057 0%, #039be5 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="age">Скільки тобі років?</label>
+        <input type="number" id="age" name="age" placeholder="18">
+        <button onclick="checkAge()">Клац</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAge() {
+            let age = document.getElementById('age').value;
+            let resultDiv = document.getElementById('result');
+            if (age >= 18 && age <= 100) {
+                resultDiv.innerHTML = "<div>Доступ дозволен!</div>";
+            } else {
+                resultDiv.innerHTML = "<div>Доступ заборонен</div>";
+            }
+        }
+    </script>
+</body>
+</html>

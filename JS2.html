@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Герой</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        body {
+            background: linear-gradient(to right, #000428, #004e92);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        div {
+            font-size: 24px; 
+            color: white;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            opacity: 0.9;
+            border-radius: 15px;
+            width: 30%;
+            margin: auto;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        .cqe {
+            width: calc(100% - 40px);
+            height: 30px;
+            font-size: 18px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .btn {
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background: linear-gradient(135deg, #ff4081 0%, #81d4fa 100%);
+            cursor: pointer;
+            margin: 20px 0; 
+            width: 180px;
+            height: 45px;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        .btn:active {
+            background: linear-gradient(135deg, #f50057 0%, #039be5 100%);
+        }
+        .btn:hover {
+            background: linear-gradient(135deg, #ff80ab 0%, #81d4fa 100%);
+        }
+        @media only screen and (max-width:800px) {
+            div {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function character() {
+            let characterName = document.qef.question.value;
+            let answer = document.getElementById('character')
+            if(characterName == 'Брайан Декарт') {
+                answer.innerHTML = 'Так ви вгадали';
+            } else {
+                answer.innerHTML = 'Ви не вгадали, імя актора Брайан Декарт';
+            }
+        }
+    </script>  
+    <div>
+        <p>Як звати актора який озвучував Коннора зі гри Detroit "DBH"?</p>
+        <form name="qef" action="javascript:character()">
+            <input class="cqe" name="question" type="text" value="Брайан Декарт" size="4">
+            <input class="btn" type="submit" value="Клац">
+        </form>
+        <span id="character">Введіть ім'я та натисніть відправити</span>
+    </div>
+</body>
+</html>
